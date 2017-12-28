@@ -25,7 +25,10 @@ window.onload = function () {
 
 /* Создаём блоки */
 function createBlock() {
-    var activeMove = document.getElementsByClassName('active-move')[0];
+    var content = document.getElementsByClassName('content')[0],
+        activeMove = document.getElementsByClassName('active-move')[0];
+
+    content.classList.add('rotate-class');
 
     activeMove.innerHTML = '';
 }

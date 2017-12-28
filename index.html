@@ -7,6 +7,10 @@
     <title>Macros</title>
     <script src="main.js"></script>
     <style>
+        body {
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.78);
+        }
         .content {
             overflow: hidden;
             position: absolute;
@@ -19,8 +23,13 @@
             background-repeat: no-repeat;
             background-color: #ff3333;
             background-size: cover;
-            width: 100%;
             background-blend-mode: darken;
+            perspective: 2000px;
+            perspective-origin: center;
+            animation: rotate 4s infinite ease alternate;
+        }
+        .rotate-class {
+            animation: rotate360 4s infinite ease alternate;
         }
         .snow {
             position: absolute;
@@ -36,7 +45,6 @@
         }
         .title {
             text-align: center;
-            width: 100%;
             z-index: 1;
         }
         .title h1 {
@@ -109,6 +117,19 @@
         @keyframes bottom-snow {
             100% {
                 top: 110vh;
+            }
+        }
+        @keyframes rotate {
+            50% {
+                transform: rotateZ(.5deg);
+            }
+            100% {
+                transform: rotateZ(-.5deg);
+            }
+        }
+        @keyframes rotate360 {
+            100% {
+                transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
             }
         }
     </style>
