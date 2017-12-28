@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Macros</title>
+    <script src="main.js"></script>
+    <style>
+        .content {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: url('bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: red;
+            background-size: cover;
+            width: 100%;
+            background-blend-mode: darken;
+        }
+        
+        .snow {
+            position: absolute;
+            top: -50px;
+            max-width: 60px;
+            min-width: 20px;
+            z-index: 0;
+            min-height: 20px;
+            max-height: 60px;
+            background: url('snow.png') no-repeat center;
+            background-size: 100%;
+            animation: bottom-snow 10s ease-in;
+        }
+        
+        .title {
+            text-align: center;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .title h1 {
+            margin-top: 50px;
+            text-transform: uppercase;
+            font-size: 25px;
+            font-family: sans-serif;
+            font-weight: 900;
+            animation: colors 5s ease-in-out infinite;
+            transition: 1s;
+            text-shadow: 0 0 10px orange;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
+        
+        .active-move {
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .active-move button {
+            animation: colors 5s ease-in-out infinite;
+            box-shadow: 0 5px 10px 0 rgba(255, 255, 255, 0.25);
+            padding: 8px 25px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 20px;
+            background: none;
+            border: 1px solid seagreen;
+            cursor: pointer;
+            outline: none;
+            text-transform: lowercase;
+            border-radius: 10px;
+            margin: auto;
+        }
+        
+        @keyframes colors {
+            10% {
+                text-shadow: 0 0 10px orange;
+            }
+            20% {
+                text-shadow: 0 0 10px blue;
+            }
+            30% {
+                text-shadow: 0 0 10px green;
+            }
+            40% {
+                text-shadow: 0 0 10px peru;
+            }
+            50% {
+                text-shadow: 0 0 10px firebrick;
+            }
+            60% {
+                text-shadow: 0 0 10px gold;
+            }
+            70% {
+                text-shadow: 0 0 10px blueviolet;
+            }
+            80% {
+                text-shadow: 0 0 10px seagreen;
+            }
+            90% {
+                text-shadow: 0 0 10px skyblue;
+            }
+            100% {
+                text-shadow: 0 0 10px salmon;
+            }
+        }
+        
+        @keyframes bottom-snow {
+            100% {
+                top: 110vh;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="title"><h1>Какой-то титул</h1></div>
+    <div class="active-move" onclick="createBlock()">
+        <button>Запустить вакханалию</button>
+    </div>
+</div>
+</body>
+</html>
